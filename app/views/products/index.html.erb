@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+
+
+  
+    <% @products.each do |product| %>
+      <div style='border: 1px solid black; border-radius: 8px; padding: 10px; margin: 20px;'>
+        <div>
+          <img src='<%= product["goods_thumb"] %>' />
+        </div>
+        <div>
+          <h4><%= product['goods_url_name'] %></h4>
+          <h5><%= product['retailPrice']["amountWithSymbol"] %></h5>
+          <h5><%= product["salePrice"]['amountWithSymbol'] %></h5>
+        </div>
+      </div>
+    <% end %>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
